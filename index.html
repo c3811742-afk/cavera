@@ -305,6 +305,21 @@ p:last-child{margin-bottom:0;}
   overflow-wrap:anywhere;
 }
 .contact__item a:hover{border-color:#fff;}
+/* Cavera phone numbers, as pill buttons on the dark contact band */
+.callrow{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;
+  margin:0 auto clamp(2.5rem,6vw,3.5rem);
+}
+.callrow a{
+  display:inline-flex;align-items:center;gap:.5rem;min-height:46px;
+  padding:.6rem 1.15rem;border-radius:999px;text-decoration:none;
+  color:#fff;font-size:.9375rem;font-weight:600;letter-spacing:.01em;font-variant-numeric:tabular-nums;
+  border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);
+  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
+}
+.callrow a svg{flex:none;opacity:.85;}
+.callrow a:hover{background:#fff;color:var(--deep);border-color:#fff;transform:translateY(-2px);}
+@media (prefers-reduced-motion:reduce){.callrow a:hover{transform:none;}}
 .contact__claim{
   font-size:.6875rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
   color:rgba(255,255,255,.68);margin:0 auto clamp(2.5rem,6vw,4rem);max-width:46ch;line-height:2.1;
@@ -1656,17 +1671,17 @@ img,.art,.lockup,.wordmark{max-width:100%;}
     <div class="inner rv">
       <p class="contact__claim">Better solutions. Better care. Better outcomes.<br>Veterinary health &amp; care solutions</p>
       <span class="lockup mask is-light" role="img" aria-label="Cavera. Value Beyond Caring"></span>
+      <p class="contact__lead">Call us</p>
+      <div class="callrow">
+        <a href="tel:+201131076009"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 3.5 4 4.2c-.7.2-1.1.9-1 1.6.5 4 2.3 7.7 5 10.5s6.5 4.5 10.5 5c.7.1 1.4-.3 1.6-1l.7-2.6c.2-.7-.2-1.4-.9-1.7l-3.2-1.2c-.6-.2-1.2 0-1.6.4l-1 1.1a13 13 0 0 1-5.6-5.6l1.1-1c.4-.4.6-1 .4-1.6L8.3 4.4c-.3-.7-1-1.1-1.7-.9z"/></svg>+20 113 107 6009</a>
+        <a href="tel:+201011533355"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 3.5 4 4.2c-.7.2-1.1.9-1 1.6.5 4 2.3 7.7 5 10.5s6.5 4.5 10.5 5c.7.1 1.4-.3 1.6-1l.7-2.6c.2-.7-.2-1.4-.9-1.7l-3.2-1.2c-.6-.2-1.2 0-1.6.4l-1 1.1a13 13 0 0 1-5.6-5.6l1.1-1c.4-.4.6-1 .4-1.6L8.3 4.4c-.3-.7-1-1.1-1.7-.9z"/></svg>+20 101 153 3355</a>
+      </div>
+
       <p class="contact__lead">Contact us</p>
       <div class="contact__grid stagger">
         <div class="contact__item">
           <span class="contact__label">Website</span>
           <a href="https://www.cavera-vet.com">www.cavera-vet.com</a>
-        </div>
-        <div class="contact__item">
-          <span class="contact__label">Phone</span>
-          <a href="tel:+201131076009" style="display:inline-block;">+20 113 107 6009</a>
-          <br>
-          <a href="tel:+201011533355" style="display:inline-block;margin-top:.4rem;">+20 101 153 3355</a>
         </div>
         <div class="contact__item">
           <span class="contact__label">General support</span>
