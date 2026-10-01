@@ -592,6 +592,19 @@ p:last-child{margin-bottom:0;}
   font-size:.8125rem;color:var(--ink-2);max-width:70ch;
 }
 
+/* ---------- Products: where to buy ---------- */
+.stockist__addr{
+  display:flex;align-items:flex-start;gap:.6rem;max-width:44ch;
+  margin:clamp(1.25rem,3vw,1.75rem) 0 0;font-size:.9375rem;color:var(--ink-2);
+}
+.stockist__addr svg{flex:none;color:var(--blue);margin-top:.15rem;}
+.stockist__addr a{
+  color:var(--deep);font-weight:600;text-decoration:underline;
+  text-decoration-color:var(--mist);text-underline-offset:3px;
+}
+.stockist__addr a:hover{text-decoration-color:var(--blue);}
+.stockist .hero__cta{justify-content:flex-start;}
+
 /* ---------- Easy Vet clinic ---------- */
 .group{
   display:grid;gap:clamp(1rem,2.5vw,1.5rem);align-items:stretch;
@@ -1485,6 +1498,23 @@ img,.art,.lockup,.wordmark{max-width:100%;}
       </div>
 
       <p class="prod-note">Batch number, manufacturing and expiry dates and registration number are printed on each pack. Veterinary products: use as directed, and consult a veterinarian if you are unsure.</p>
+    </div>
+  </section>
+
+  <section class="band band--tint" id="stock">
+    <span class="burst burst--b bl" aria-hidden="true"></span>
+    <div class="inner stockist rv">
+      <p class="eyebrow"><span class="num">03</span> Where to buy</p>
+      <h2 style="max-width:20ch;">Find them at the Easy Vet clinic.</h2>
+      <p class="lede" style="max-width:56ch;">Cavera products aren't ordered online. The full range is kept at our Easy Vet clinic in New Cairo, where the team can also help you choose the right one for your animal.</p>
+      <p class="stockist__addr">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.3-6.5-10.3A6.5 6.5 0 0 1 12 4.2a6.5 6.5 0 0 1 6.5 6.5C18.5 15.7 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>
+        <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Aya+Mall+El+Banafseg+10+Service+Center+New+Cairo+Egypt" target="_blank" rel="noopener">Aya Mall (2nd floor), El Banafseg 10 Service Center, New Cairo, Egypt</a></span>
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="https://www.google.com/maps/search/?api=1&amp;query=Aya+Mall+El+Banafseg+10+Service+Center+New+Cairo+Egypt" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn--ghost" href="#clinic">About the clinic</a>
+      </div>
     </div>
   </section>
 </div>
