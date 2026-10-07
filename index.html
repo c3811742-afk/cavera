@@ -288,12 +288,10 @@ p:last-child{margin-bottom:0;}
 }
 .contact p{margin-inline:auto;}
 .contact__grid{
-  display:grid;gap:1.75rem clamp(1.5rem,4vw,3rem);
-  grid-template-columns:1fr;max-width:1040px;margin-inline:auto;
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;
+  gap:1.75rem clamp(1.75rem,4vw,3rem);max-width:1040px;margin-inline:auto;
 }
-@media (min-width:560px){.contact__grid{grid-template-columns:repeat(2,1fr);}}
-@media (min-width:960px){.contact__grid{grid-template-columns:repeat(4,1fr);}}
-.contact__item{text-align:center;}
+.contact__item{text-align:center;flex:0 1 190px;}
 .contact__label{
   display:block;font-size:.625rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:rgba(255,255,255,.5);margin-bottom:.4rem;
@@ -1724,6 +1722,10 @@ img,.art,.lockup,.wordmark{max-width:100%;}
         <div class="contact__item">
           <span class="contact__label">Sales</span>
           <a href="mailto:sales@cavera-vet.com">sales@cavera-vet.com</a>
+        </div>
+        <div class="contact__item">
+          <span class="contact__label">Dr Tarek</span>
+          <a href="mailto:drtarek@cavera-vet.com">drtarek@cavera-vet.com</a>
         </div>
       </div>
       <p class="contact__lead" style="margin-bottom:1.25rem;">Follow Cavera</p>
