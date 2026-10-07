@@ -606,6 +606,44 @@ p:last-child{margin-bottom:0;}
 .stockist__addr a:hover{text-decoration-color:var(--blue);}
 .stockist .hero__cta{justify-content:flex-start;}
 
+/* ---------- Products: loyalty / rewards ---------- */
+.loysteps{
+  list-style:none;margin:clamp(2rem,4vw,2.75rem) 0 0;padding:0;
+  display:grid;gap:clamp(.9rem,2vw,1.1rem);grid-template-columns:1fr;
+}
+@media(min-width:720px){.loysteps{grid-template-columns:repeat(3,1fr);}}
+.loysteps li{
+  display:flex;gap:.85rem;align-items:flex-start;font-size:.9375rem;color:var(--ink-2);
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;text-align:left;
+}
+.loysteps b{
+  flex:none;width:30px;height:30px;border-radius:999px;display:grid;place-items:center;
+  background:var(--paper-2);border:1.5px solid var(--mist);color:var(--blue);
+  font-family:var(--f-display);font-size:1rem;font-weight:400;
+}
+.rewards__sub{
+  font-family:var(--f-display);font-weight:400;color:var(--deep);
+  font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);margin:clamp(2.25rem,4vw,2.75rem) 0 .5rem;
+}
+.partners{display:flex;flex-wrap:wrap;gap:clamp(1rem,2.5vw,1.5rem);margin-top:1.5rem;}
+.partner{
+  background:#fff;border:2px solid var(--blue);border-radius:20px;
+  padding:1.3rem 1.4rem;box-shadow:5px 5px 0 var(--blue);text-align:left;flex:0 1 340px;
+}
+.partner__pin{
+  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  background:var(--paper-2);border:1px solid var(--mist);color:var(--blue);margin-bottom:.8rem;
+}
+.partner h4{font-family:var(--f-display);font-weight:400;font-size:1.25rem;color:var(--deep);margin:0 0 .25rem;}
+.partner__area{font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin:0 0 .6rem;}
+.partner__meta{font-size:.875rem;color:var(--ink-2);margin:0 0 .9rem;line-height:1.55;}
+.partner__map{
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--deep);text-decoration:none;border-bottom:2px solid var(--mist);padding-bottom:2px;
+}
+.partner__map:hover{border-color:var(--blue);}
+.partner__map::after{content:" \2197";}
+
 /* ---------- Easy Vet clinic ---------- */
 .group{
   display:grid;gap:clamp(1rem,2.5vw,1.5rem);align-items:stretch;
@@ -1514,7 +1552,30 @@ img,.art,.lockup,.wordmark{max-width:100%;}
       </p>
       <div class="hero__cta">
         <a class="btn btn--solid" href="https://www.google.com/maps/search/?api=1&amp;query=Aya+Mall+El+Banafseg+10+Service+Center+New+Cairo+Egypt" target="_blank" rel="noopener">Get directions</a>
-        <a class="btn btn--ghost" href="#clinic">About the clinic</a>
+
+  <section class="band band--tint" id="rewards">
+    <span class="burst burst--a tr" aria-hidden="true"></span>
+    <div class="inner rv">
+      <p class="eyebrow"><span class="num">04</span> Cavera rewards</p>
+      <h2 style="max-width:22ch;">A loyalty card with every purchase.</h2>
+      <p class="lede" style="max-width:60ch;">Buy any Cavera product and you&rsquo;ll receive a Cavera loyalty card. Show it on your next purchase to unlock a members&rsquo; discount &mdash; redeemable at the participating clinics below.</p>
+
+      <ol class="loysteps">
+        <li><b>1</b> Buy any Cavera product and receive your card.</li>
+        <li><b>2</b> Keep it with you &mdash; your membership does not expire.</li>
+        <li><b>3</b> Show it at a participating clinic to claim your discount on the next product.</li>
+      </ol>
+
+      <h3 class="rewards__sub">Where to redeem</h3>
+      <p style="max-width:58ch;">Present your card at any of these participating clinics to claim your Cavera discount.</p>
+      <div class="partners">
+        <article class="partner">
+          <div class="partner__pin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.3-6.5-10.3A6.5 6.5 0 0 1 12 4.2a6.5 6.5 0 0 1 6.5 6.5C18.5 15.7 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg></div>
+          <h4>Easy Vet</h4>
+          <p class="partner__area">New Cairo, Cairo</p>
+          <p class="partner__meta">Aya Mall (2nd floor), El Banafseg 10 Service Center<br>+20 100 513 1075</p>
+          <a class="partner__map" href="https://www.google.com/maps/search/?api=1&amp;query=Aya+Mall+El+Banafseg+10+Service+Center+New+Cairo+Egypt" target="_blank" rel="noopener">View on map</a>
+        </article>
       </div>
     </div>
   </section>
@@ -2127,7 +2188,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
     top: 'home',
     'about-us': 'about', vision: 'about', mission: 'about',
     philosophy: 'about', animals: 'about', why: 'about',
-    focus: 'products', line: 'products',
+    focus: 'products', line: 'products', stock: 'products', rewards: 'products',
     development: 'approach', quality: 'approach',
     veterinarians: 'approach', future: 'approach',
     group: 'clinic', 'clinic-services': 'clinic', 'clinic-contact': 'clinic',
