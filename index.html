@@ -643,6 +643,9 @@ p:last-child{margin-bottom:0;}
 }
 .partner__map:hover{border-color:var(--blue);}
 .partner__map::after{content:" \2197";}
+.partner__pin--logo{overflow:hidden;padding:0;background:#fff;}
+.partner__pin--logo img{width:100%;height:100%;object-fit:cover;display:block;}
+.rewards__note{margin-top:clamp(1.25rem,3vw,1.75rem);font-size:.8125rem;color:var(--ink-2);max-width:64ch;}
 
 /* ---------- Easy Vet clinic ---------- */
 .group{
@@ -1554,7 +1557,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
     <div class="inner rv">
       <p class="eyebrow"><span class="num">04</span> Cavera rewards</p>
       <h2 style="max-width:22ch;">A loyalty card with every purchase.</h2>
-      <p class="lede" style="max-width:60ch;">Buy any Cavera product and you&rsquo;ll receive a Cavera loyalty card. Show it on your next purchase to unlock a members&rsquo; discount &mdash; redeemable at the participating clinics below.</p>
+      <p class="lede" style="max-width:60ch;">Buy any Cavera product and you&rsquo;ll receive a Cavera loyalty card. Show it on your next purchase to unlock a members&rsquo; discount &mdash; redeemable at the participating clinics and partners below.</p>
 
       <ol class="loysteps">
         <li><b>1</b> Buy any Cavera product and receive your card.</li>
@@ -1563,7 +1566,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
       </ol>
 
       <h3 class="rewards__sub">Where to redeem</h3>
-      <p style="max-width:58ch;">Present your card at any of these participating clinics to claim your Cavera discount.</p>
+      <p style="max-width:58ch;">Present your card at any of these participating clinics and partners to claim your Cavera discount.</p>
       <div class="partners">
         <article class="partner">
           <div class="partner__pin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.3-6.5-10.3A6.5 6.5 0 0 1 12 4.2a6.5 6.5 0 0 1 6.5 6.5C18.5 15.7 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg></div>
@@ -1572,7 +1575,15 @@ img,.art,.lockup,.wordmark{max-width:100%;}
           <p class="partner__meta">Aya Mall (2nd floor), El Banafseg 10 Service Center<br>+20 100 513 1075</p>
           <a class="partner__map" href="https://www.google.com/maps/search/?api=1&amp;query=Aya+Mall+El+Banafseg+10+Service+Center+New+Cairo+Egypt" target="_blank" rel="noopener">View on map</a>
         </article>
+        <article class="partner">
+          <div class="partner__pin partner__pin--logo"><img src="data:image/webp;base64,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" alt="Dog Community logo"></div>
+          <h4>Dog Community</h4>
+          <p class="partner__area">New Cairo, Cairo &middot; Pet shop</p>
+          <p class="partner__meta">Al Narges 3, New Cairo<br>+20 10 0656 0957</p>
+          <a class="partner__map" href="https://www.google.com/maps/place/Al+Narges+3,+New+Cairo+1,+Cairo+Governorate/@30.0144982,31.4499031,17z" target="_blank" rel="noopener">View on map</a>
+        </article>
       </div>
+      <p class="rewards__note">Discounts vary from place to place, and we add new partners over time, so there is no fixed list &mdash; it is always worth asking where you shop or visit.</p>
     </div>
   </section>
 </div>
