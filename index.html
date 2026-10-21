@@ -509,6 +509,7 @@ p:last-child{margin-bottom:0;}
 /* ---------- price + order on the card ---------- */
 .prod__foot{margin-top:auto;display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
 .prod__price{margin:0;font-family:var(--f-display);font-weight:500;font-size:1.55rem;color:var(--deep);line-height:1;}
+.prod__price{display:none;}  /* prices hidden for now  delete this line to show them again */
 .prod__price span{font-family:var(--f-body);font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);vertical-align:.35em;margin-right:.3rem;}
 .prod__actions{display:flex;gap:.6rem;flex-wrap:wrap;}
 .prod__order{
@@ -2622,6 +2623,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
 (function () {
   var WA = '201131076009';                         /* Cavera orders line */
   var CUR = 'EGP';
+  var SHOW_PRICES = false;   /* prices hidden for now; set true to show them again (also remove the .prod__price{display:none} card rule) */
   var PRODUCTS = [
     { key:'spray',   name:'Silvana Spray',      size:'100 ml', price:400 },
     { key:'gel',     name:'Silvana Hydrogel',   size:'100 ml', price:425 },
@@ -2644,7 +2646,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
     row.className = 'oitem';
     row.innerHTML =
       '<div class="oitem__info"><p class="oitem__name">' + p.name + '</p>' +
-      '<p class="oitem__price">' + p.size + ' &middot; ' + money(p.price) + '</p></div>' +
+      '<p class="oitem__price">' + (SHOW_PRICES ? p.size + ' &middot; ' + money(p.price) : p.size) + '</p></div>' +
       '<div class="ostep">' +
         '<button type="button" data-dec="' + p.key + '" aria-label="Fewer">&minus;</button>' +
         '<output id="oq-' + p.key + '">0</output>' +
@@ -2653,13 +2655,16 @@ img,.art,.lockup,.wordmark{max-width:100%;}
     wrap.appendChild(row);
   });
 
+  var totalRow = totalEl ? totalEl.closest('.ototal') : null;
+  if (!SHOW_PRICES && totalRow) totalRow.style.display = 'none';
+
   function refresh() {
     var total = 0;
     PRODUCTS.forEach(function (p) {
       total += qty[p.key] * p.price;
       document.getElementById('oq-' + p.key).textContent = qty[p.key];
     });
-    totalEl.textContent = money(total);
+    if (SHOW_PRICES) totalEl.textContent = money(total);
   }
   function setQty(key, delta) {
     if (!(key in qty)) return;
@@ -2684,7 +2689,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
       var q = qty[p.key];
       if (q > 0) {
         var sub = q * p.price; total += sub;
-        lines.push('• ' + p.name + ' (' + p.size + ') × ' + q + ' — ' + money(sub));
+        lines.push('• ' + p.name + ' (' + p.size + ') × ' + q + (SHOW_PRICES ? ' — ' + money(sub) : ''));
       }
     });
     var name = val('oname'), phone = val('ophone'), addr = val('oaddr'), notes = val('onotes');
@@ -2696,7 +2701,7 @@ img,.art,.lockup,.wordmark{max-width:100%;}
     var msg = 'New Cavera order\n' +
       '────────────\n' +
       lines.join('\n') + '\n\n' +
-      'Estimated total: ' + money(total) + '\n\n' +
+      (SHOW_PRICES ? 'Estimated total: ' + money(total) + '\n\n' : '') +
       'Name: ' + name + '\n' +
       'Phone: ' + phone + '\n' +
       'Address: ' + addr + '\n' +
